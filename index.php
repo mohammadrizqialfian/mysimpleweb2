@@ -55,8 +55,9 @@
 	</header>
 	<?php
 	include "mysql.php";
+	$inputan = "SELECT * FROM dokter";
 	//variabel query berisi mysqli query yang digunakan untuk menampilkan semua data di tabel dokter
-	$query = sqlsrv_query($conn, "SELECT * FROM dokter");
+	$query = sqlsrv_query($conn, $inputan);
 ?>
 	<div >
 		<form action="" method="post">
@@ -108,8 +109,7 @@
 	</div>
 	<!--============================================== Batas bawah ==============================-->
 	<br>
-<?php 
-	//memanggil file footer.php
+<?php
 	include("footer.php");
-	mysqli_close($conn);
+	sqlsrv_close($conn);
 ?>

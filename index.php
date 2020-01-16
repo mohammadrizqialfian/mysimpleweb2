@@ -89,7 +89,7 @@
 					</tr>
 				<?php
 				} 
-				mssql_free_result($data)
+				mssql_free_result($query)
 				?>
 			</table>
 		</form>

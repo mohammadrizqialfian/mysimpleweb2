@@ -18,7 +18,7 @@
 			//variabel sk berisi data dari form gaji
 			$sk = $_POST['gaji'];
 			//variabel sql yang berisi query untuk menambahkan/insert data
-			$sql = "INSERT INTO dokter (Kd_dokter, Nama, Alamat, Gender, Gaji, tanggal) VALUES ('$id','$nama','$alamat','$jk', '$sk', CURDATE());"
+			$sql = "INSERT INTO dokter (Kd_dokter, Nama, Alamat, Gender, Gaji, tanggal) VALUES ('$id','$nama','$alamat','$jk', '$sk', CURDATE());";
 			//variabel query berisi mysqli_query yang memanggil variabel sambung2 dan variabel sql
 			$query = sqlsrv_query($conn, $sql);
 		

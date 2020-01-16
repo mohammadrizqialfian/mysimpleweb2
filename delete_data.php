@@ -10,7 +10,7 @@
 		//variabel cek2 berisi mysqli query
 		$cek2 = sqlsrv_query($conn, $cek);
 		//variabel cek2 berisi extract array dari variabel cek2
-		$cek2 = mysqli_fetch_array($cek2);
+		$cek2 = sqlsrv_fetch_array($cek2);
 		//jika variabel cek2 yang di index Kd_dokter tidak kosong maka
 		if ($cek2["Kd_dokter"]!=""){
 			//variabel sql yang berisi query untuk delete data

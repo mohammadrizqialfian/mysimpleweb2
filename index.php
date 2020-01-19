@@ -71,6 +71,9 @@
 					<th>Tanggal</th>
 				</tr>
 				<?php
+				$checkdata = "SELECT COUNT(*) AS RowCnt FROM dokter";
+				$querychek = (sqlsrv_query($conn, $checkdata));
+				if ($querychek > 0){
 				//jika jumlah data/baris lebih dari 0 maka
 					while($data = sqlsrv_fetch_array($query)){
 				?>
@@ -85,11 +88,13 @@
 						<td> <?php echo $data["Gender"]; ?> </td>
 						<!--memanggil variabel data dengan index Gaji-->
 						<td> <?php echo $data["Gaji"]; ?> </td>
-						<td> <?php echo $data["tanggal"]; ?> </td>
+						<td> <?php echo $data["tanggal"]->format('d M Y'); ?> </td>
 					</tr>
 				<?php
-				} 
-				mssql_free_result($query)
+				}
+				
+} 			
+				
 				?>
 			</table>
 		</form>
